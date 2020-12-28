@@ -16,11 +16,6 @@ namespace bytebankFuncionarios
             _totalBonitifacao += funcionario.GetBonificacao();
         }
 
-        public void Registrar(Diretor diretor)
-        {
-            _totalBonitifacao += diretor.GetBonificacao();
-        }
-
         public double getTotalBonificacao()
         {
             return _totalBonitifacao;
