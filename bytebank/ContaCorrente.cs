@@ -49,7 +49,7 @@ namespace bytebank
         public ContaCorrente(int agencia, int numero)
         {
             Agencia = agencia;
-            Numero = numero;
+            Numero = numero;           
 
             TotalDeContasCriadas++;
         }
