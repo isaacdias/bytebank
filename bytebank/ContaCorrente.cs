@@ -8,7 +8,7 @@ namespace bytebank
 {
     class ContaCorrente
     {
-        public Cliente titular { get; set; }
+        public Cliente Titular { get; set; }
         public static int TotalDeContasCriadas { get; private set; }
         private int _agencia;
         public int Agencia

@@ -18,10 +18,10 @@ namespace bytebank
             Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
 
             ContaCorrente conta = new ContaCorrente(867, 86712540);
-            conta.titular = cliente;
+            conta.Titular = cliente;
             Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
 
-            Console.WriteLine("Titular: " + conta.titular.Nome);
+            Console.WriteLine("Titular: " + conta.Titular.Nome);
             Console.WriteLine(conta.Agencia);
             Console.WriteLine(conta.Numero);
 
