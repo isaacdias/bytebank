@@ -19,6 +19,7 @@ namespace bytebank
             }
             set
             {
+                // escrever minha validação de CPF
                 _cpf = value;
             }
         }
