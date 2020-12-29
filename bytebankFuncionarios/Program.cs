@@ -17,26 +17,29 @@ namespace bytebankFuncionarios
             carlos.Nome = "Carlos";
 
             gerenciador.Registrar(carlos);
-            carlos.AumentarSalario();
-            Console.WriteLine(Funcionario.TotalDeFuncionarios);
+            Console.WriteLine("O total de funcionários cadastrados é: " + Funcionario.TotalDeFuncionarios);
             Console.WriteLine(carlos.Nome);
-            Console.WriteLine(carlos.GetBonificacao());
-            Console.WriteLine("Novo salario de Carlos é: " + carlos.Salario);
+            Console.WriteLine("O salário do carlos é :" + carlos.Salario);
+            Console.WriteLine("A bonificação do Carlos é: " + carlos.GetBonificacao());
+            carlos.AumentarSalario();
+            Console.WriteLine("O Novo salario de Carlos é: " + carlos.Salario);
+            Console.WriteLine();
 
             Diretor roberta = new Diretor("789.456.123.79");
 
             roberta.Nome = "Roberta";
             gerenciador.Registrar(roberta);
-            roberta.AumentarSalario();
-
-
-            Console.WriteLine(Funcionario.TotalDeFuncionarios);
+            Console.WriteLine("O total de funcionários cadastrados é: " + Funcionario.TotalDeFuncionarios);
             Console.WriteLine(roberta.Nome);
-            Console.WriteLine(roberta.GetBonificacao());
-            Console.WriteLine("Novo salario de Carlos é: " + roberta.Salario);
-
-
+            Console.WriteLine("O salário da Roberta é :" + roberta.Salario);
+            Console.WriteLine("A bonificação da Roberta é: " + roberta.GetBonificacao());
+            roberta.AumentarSalario();
+            Console.WriteLine("Novo salario da Roberta é: " + roberta.Salario);
+            Console.WriteLine();
             Console.WriteLine("Total de bonificações: " +  gerenciador.getTotalBonificacao());
+
+
+
             
             Console.ReadLine();
         }
