@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Funcionarios\Auxiliar.cs" />
+    <Compile Include="Funcionarios\Designer.cs" />
     <Compile Include="Funcionarios\Diretor.cs" />
     <Compile Include="Funcionarios\Funcionario.cs" />
+    <Compile Include="Funcionarios\GerenteDeConta.cs" />
     <Compile Include="GerenciadorBonificacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
