@@ -38,9 +38,6 @@ namespace bytebankFuncionarios
             Console.WriteLine();
             Console.WriteLine("Total de bonificações: " +  gerenciador.getTotalBonificacao());
 
-
-
-            
             Console.ReadLine();
         }
     }
