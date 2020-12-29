@@ -25,7 +25,7 @@ namespace bytebankFuncionarios
             roberta.Nome = "Roberta";
             roberta.Senha = "123";
 
-            Funcionario camila = new GerenteDeConta("123.789.456.33");
+            GerenteDeConta camila = new GerenteDeConta("123.789.456.33");
             camila.Nome = "Camila";
             camila.Senha = "abc";
 
