@@ -19,6 +19,9 @@ namespace bytebankFuncionarios
         {
             GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
 
+            Desenvolvedor isaac = new Desenvolvedor("654.321.987.44");
+            isaac.Nome = "Isaac";
+
             Designer pedro = new Designer("123.456.789-00");
             pedro.Nome = "Pedro";
 
@@ -31,6 +34,7 @@ namespace bytebankFuncionarios
             GerenteDeConta camila = new GerenteDeConta("123.789.456.33");
             camila.Nome = "Camila";
 
+            gerenciadorBonificacao.Registrar(isaac);
             gerenciadorBonificacao.Registrar(pedro);
             gerenciadorBonificacao.Registrar(roberta);
             gerenciadorBonificacao.Registrar(igor);
