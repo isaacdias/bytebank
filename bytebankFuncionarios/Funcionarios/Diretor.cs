@@ -19,7 +19,7 @@ namespace bytebankFuncionarios.Funcionarios
         }
         public override double GetBonificacao()
         {
-            return Salario + base.GetBonificacao(); // bonificacao é o salario + o percentual da classe base.
+            return Salario * 0.5;
         }
     }
 }
