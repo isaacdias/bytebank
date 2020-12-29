@@ -11,34 +11,33 @@ namespace bytebankFuncionarios
     {
         static void Main(string[] args)
         {
-            Funcionario carlos = new Funcionario(2000, "123.456.789.20");
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-
-            carlos.Nome = "Carlos";
-
-            gerenciador.Registrar(carlos);
-            Console.WriteLine("O total de funcionários cadastrados é: " + Funcionario.TotalDeFuncionarios);
-            Console.WriteLine(carlos.Nome);
-            Console.WriteLine("O salário do carlos é :" + carlos.Salario);
-            Console.WriteLine("A bonificação do Carlos é: " + carlos.GetBonificacao());
-            carlos.AumentarSalario();
-            Console.WriteLine("O Novo salario de Carlos é: " + carlos.Salario);
-            Console.WriteLine();
-
-            Diretor roberta = new Diretor("789.456.123.79");
-
-            roberta.Nome = "Roberta";
-            gerenciador.Registrar(roberta);
-            Console.WriteLine("O total de funcionários cadastrados é: " + Funcionario.TotalDeFuncionarios);
-            Console.WriteLine(roberta.Nome);
-            Console.WriteLine("O salário da Roberta é :" + roberta.Salario);
-            Console.WriteLine("A bonificação da Roberta é: " + roberta.GetBonificacao());
-            roberta.AumentarSalario();
-            Console.WriteLine("Novo salario da Roberta é: " + roberta.Salario);
-            Console.WriteLine();
-            Console.WriteLine("Total de bonificações: " +  gerenciador.getTotalBonificacao());
-
+            CalcularBonificacao();
             Console.ReadLine();
+        }
+
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+
+            Designer pedro = new Designer("123.456.789-00");
+            pedro.Nome = "Pedro";
+
+            Diretor roberta = new Diretor("789.456.123.11");
+            roberta.Nome = "Roberta";
+
+            Auxiliar igor = new Auxiliar("456.123.789.22");
+            igor.Nome = "Igor";
+
+            GerenteDeConta camila = new GerenteDeConta("123.789.456.33");
+            camila.Nome = "Camila";
+
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(camila);
+
+            Console.WriteLine("Total de bonificações do mês " +
+                gerenciadorBonificacao.getTotalBonificacao());
         }
     }
 }
