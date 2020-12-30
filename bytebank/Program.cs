@@ -25,10 +25,10 @@ namespace bytebank
                 Console.WriteLine("Agencia: " + conta.Agencia);
                 Console.WriteLine("Conta: " + conta.Numero);
 
-                conta2.Transferir(10000, conta);
+                //conta2.Transferir(10000, conta);
                 conta.Depositar(50);
                 Console.WriteLine("Saldo: " + conta.Saldo);
-                conta.Sacar(-500);
+                conta.Sacar(500);
                 Console.WriteLine("Saldo após o saque: " + conta.Saldo);
 
             }
@@ -40,11 +40,16 @@ namespace bytebank
             }
             catch(SaldoInsuficienteException e)
             {
-                Console.WriteLine("Valor do saldo atual: " + e.Saldo);
-                Console.WriteLine("Valor do saque: " + e.ValorSaque);
-                Console.WriteLine(e.StackTrace);
                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
                 Console.WriteLine("Exceção do tipo SaldoInsuficienteException.");
+            }
+            catch (OperacaoFinanceiraException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.InnerException.Message);
+                Console.WriteLine(e.InnerException.StackTrace); 
             }
             catch (Exception e)
             {
