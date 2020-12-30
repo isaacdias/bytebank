@@ -49,18 +49,17 @@ namespace bytebank
             Agencia = agencia;
             Numero = numero;
 
-            //TaxaOprecacao = 30 / TotalDeContasCriadas;
             TotalDeContasCriadas++;
+            TaxaOprecacao = 30 / TotalDeContasCriadas;
         }
 
-        public bool Sacar(double valor)
+        public void Sacar(double valor)
         {
             if(_saldo < valor)
             {
-                return false;
+                throw new SaldoInsuficienteException("Sado insuficiente para o saque no valor de " + valor);
             }
             _saldo-= valor;
-            return true;
         }
 
         public void Depositar(double valor)

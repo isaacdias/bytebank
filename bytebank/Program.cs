@@ -23,12 +23,21 @@ namespace bytebank
                 Console.WriteLine("Titular: " + conta.Titular.Nome);
                 Console.WriteLine("Agencia: " + conta.Agencia);
                 Console.WriteLine("Conta: " + conta.Numero);
+
+                conta.Depositar(50);
+                Console.WriteLine("Saldo: " + conta.Saldo);
+                conta.Sacar(500);
             }
             catch(ArgumentException e)
             {
                 Console.WriteLine("O argumento com problema é: " + e.ParamName);
                 Console.WriteLine("Aconteceu uma exceção do tipo ArgumentException.");
                 Console.WriteLine(e.Message);
+            }
+            catch(SaldoInsuficienteException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("Exceção do tipo SaldoInsuficienteException.");
             }
             catch (Exception e)
             {
@@ -39,7 +48,7 @@ namespace bytebank
             Console.WriteLine("Total de contas criadas: " + ContaCorrente.TotalDeContasCriadas);
 
             Console.WriteLine();
-            //Console.WriteLine("Taxa de operação: " + ContaCorrente.TaxaOprecacao);
+            Console.WriteLine("Taxa de operação: " + ContaCorrente.TaxaOprecacao);
 
 
             Console.ReadLine();
