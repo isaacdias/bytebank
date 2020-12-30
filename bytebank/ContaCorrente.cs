@@ -12,6 +12,9 @@ namespace bytebank
 
         public static double TaxaOprecacao { get; private set; }
         public static int TotalDeContasCriadas { get; private set; }
+
+        public int contadorSaquesNaoPermitidos { get; private set; }
+        public int contadorTransferenciasNaoPermitidas { get; private set; }
         public int Agencia { get; }
         public int Numero { get; }
         
@@ -61,6 +64,7 @@ namespace bytebank
             }
             if(_saldo < valor)
             {
+                contadorSaquesNaoPermitidos++;
                 throw new SaldoInsuficienteException(Saldo, valor);
             }
             _saldo-= valor;
@@ -78,7 +82,15 @@ namespace bytebank
                 throw new ArgumentException("Valor inválido para tranferênçia.", nameof(valor));
             }
 
-            Sacar(valor);
+            try
+            {
+                Sacar(valor);
+            }
+            catch(SaldoInsuficienteException e)
+            {
+                contadorTransferenciasNaoPermitidas++;
+                throw;
+            }
             contaDestino.Depositar(valor);
         }
 
