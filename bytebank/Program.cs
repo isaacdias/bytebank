@@ -26,9 +26,11 @@ namespace bytebank
 
                 conta.Depositar(50);
                 Console.WriteLine("Saldo: " + conta.Saldo);
-                conta.Sacar(500);
+                conta.Sacar(-500);
+                Console.WriteLine("Saldo após o saque: " + conta.Saldo);
+
             }
-            catch(ArgumentException e)
+            catch (ArgumentException e)
             {
                 Console.WriteLine("O argumento com problema é: " + e.ParamName);
                 Console.WriteLine("Aconteceu uma exceção do tipo ArgumentException.");
