@@ -19,6 +19,7 @@ namespace bytebank
             try
             {
                 ContaCorrente conta = new ContaCorrente(467, 86712540);
+                ContaCorrente conta2 = new ContaCorrente(467, 45619381);
                 conta.Titular = cliente;
                 Console.WriteLine("Titular: " + conta.Titular.Nome);
                 Console.WriteLine("Agencia: " + conta.Agencia);
@@ -26,8 +27,9 @@ namespace bytebank
 
                 conta.Depositar(50);
                 Console.WriteLine("Saldo: " + conta.Saldo);
-                conta.Sacar(-500);
+                conta.Sacar(50);
                 Console.WriteLine("Saldo após o saque: " + conta.Saldo);
+                conta2.Transferir(-10, conta);
 
             }
             catch (ArgumentException e)
